@@ -32,38 +32,11 @@ TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
     int val1 = root1->val ? root1->val:0;
     int val2 = root2->val ? root2->val:0;
 
-    // int val1 = 0;
-    // int val2 = 0;
-
-    // // std::cout<<root1<<" "<<root2<<std::endl;
-    // std::cout<<root1<<" "<<root2<<" ";
-
-    // if (root1!=NULL){
-    //     // std::cout<<"a"<<std::endl;
-    //     val1 = root1->val ? root1->val:0;
-    // }
-
-    // if (root2!=NULL){
-    //     // std::cout<<"b"<<std::endl;
-    //     val2 = root2->val ? root2->val:0;
-    // }
-
-
-
-    // TreeNode root = TreeNode(val1+val2);
     root1->val = val1+val2;
 
-    std::cout<<"root1 val: "<<root1->val<<std::endl;
-
-    // std::cout<<"----\n"<<std::endl;
-    // std::cout<<root1<<std::endl;
-    // std::cout<<root2<<std::endl;
 
     root1->left = mergeTrees(root1 ? root1->left:NULL, root2 ? root2->left:NULL);
     root1->right = mergeTrees(root1 ? root1->right:NULL, root2 ? root2->right:NULL);
-
-    // root1->left = mergeTrees(root1->left, root2->left);
-    // root1->right = mergeTrees(root1->right , root2->right);
 
     return root1;
 
